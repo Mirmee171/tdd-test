@@ -8,14 +8,14 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TddTestApplicationTest {
+public class WebLayerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
     public void shouldReturnDefaultMessage() throws Exception {
-    this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
+        this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
             .andExpect(content().string(containString("Hello, World")));
     }
 }
